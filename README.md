@@ -162,10 +162,10 @@ Please refer to [CDC's Template Repository](https://github.com/CDCgov/template) 
 ## SHARE IT Act Metadata
 
 ```md
-Org:            NCEZID
-Contact Email:  ncezid_shareit@cdc.gov
-Status:         Maintained
-Keywords:       bioinformatics
-Version:        1.2.0
-Contract#:      47QFCA23F0058
+Org: NCEZID
+Contact Email: ncezid_shareit@cdc.gov
+Status: Maintained
+Keywords: bioinformatics
+Version: 1.2.0
+Contract#: 47QFCA23F0058
 ```
