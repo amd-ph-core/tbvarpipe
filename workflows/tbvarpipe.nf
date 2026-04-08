@@ -69,10 +69,10 @@ workflow TBVARPIPE {
     // Extract snpEff cache if provided as tarball
     if (params.snpeff_cache?.endsWith('.tar.gz') || params.snpeff_cache?.endsWith('.tgz')) {
         UNTAR(Channel.of([[id: 'snpeff_cache'], file(params.snpeff_cache)]))
-        ch_snpeff_cache = UNTAR.out.untar.map { _meta, cache -> cache }
+        ch_snpeff_cache = UNTAR.out.untar.map { _meta, cache -> cache }.first()
         ch_versions = ch_versions.mix(UNTAR.out.versions)
     } else {
-        ch_snpeff_cache = Channel.of(params.snpeff_cache)
+        ch_snpeff_cache = Channel.value(params.snpeff_cache)
     }
 
     // SUBWORKFLOW: VARPIPE
