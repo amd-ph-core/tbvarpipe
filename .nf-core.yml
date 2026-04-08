@@ -1,0 +1,65 @@
+lint:
+  files_exist:
+    - CODE_OF_CONDUCT.md
+    - assets/nf-core-tbvarpipe_logo_light.png
+    - assets/email_template.html
+    - assets/email_template.txt
+    - assets/sendmail_template.txt
+    - docs/images/nf-core-tbvarpipe_logo_light.png
+    - docs/images/nf-core-tbvarpipe_logo_dark.png
+    - .github/ISSUE_TEMPLATE/config.yml
+    - .github/workflows/awstest.yml
+    - .github/workflows/awsfulltest.yml
+    - .github/workflows/linting_comment.yml
+    - .github/workflows/nf-test.yml
+    - .github/actions/get-shards/action.yml
+    - .github/actions/nf-test/action.yml
+    - conf/igenomes.config
+    - tests/default.nf.test
+    - nf-test.config
+    - assets/multiqc_config.yml
+    - conf/igenomes_ignored.config
+    - ro-crate-metadata.json
+  files_unchanged:
+    - CODE_OF_CONDUCT.md
+    - docs/README.md
+    - .github/ISSUE_TEMPLATE/bug_report.yml
+    - .github/CONTRIBUTING.md
+    - .github/PULL_REQUEST_TEMPLATE.md
+    - .github/ISSUE_TEMPLATE/config.yml
+    - .github/ISSUE_TEMPLATE/feature_request.yml
+    - assets/email_template.html
+    - assets/email_template.txt
+    - .github/workflows/branch.yml
+    - .github/workflows/linting.yml
+    - .github/workflows/linting_comment.yml
+    - conf/igenomes.config
+    - .prettierignore
+    - LICENSE
+  nextflow_config:
+    - manifest.name
+    - manifest.homePage
+    - manifest.version
+    - custom_config
+    - config_defaults:
+        - params.custom_config_version
+        - params.custom_config_base
+    - validation.help.beforeText
+    - validation.help.afterText
+    - validation.summary.beforeText
+    - validation.summary.afterText
+  multiqc_config:
+    - report_comment
+nf_core_version: 3.3.2
+repository_type: pipeline
+template:
+  author: AMD Platform Team
+  description: AMD Platform repository for the Nextflow Pipeline of CDC Varpipe-WGS pipeline originally developed by the Division of TB Elimination to perform data cleaning and analysis (typing and variant detection)
+  force: false
+  is_nfcore: false
+  name: tbvarpipe
+  org: amd-ph-core
+  outdir: .
+  skip_features:
+    - igenomes
+  version: 1.2.0

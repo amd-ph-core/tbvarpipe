@@ -1,0 +1,251 @@
+{
+    "-profile test": {
+        "content": [
+            55,
+            {
+                "BWA_INDEX": {
+                    "bwa": "0.7.19-r1273"
+                },
+                "CAT_FASTQ": {
+                    "cat": 9.4
+                },
+                "GATK4_FILTERMUTECTCALLS_ALL": {
+                    "gatk4": "4.6.2.0-SNAPSHOT"
+                },
+                "GATK4_FILTERMUTECTCALLS_TARGETED": {
+                    "gatk4": "4.6.2.0-SNAPSHOT"
+                },
+                "GATK4_LEFTALIGNANDTRIMVARIANTS_ALL": {
+                    "gatk4": "4.6.2.0-SNAPSHOT"
+                },
+                "GATK4_LEFTALIGNANDTRIMVARIANTS_TARGETED": {
+                    "gatk4": "4.6.2.0-SNAPSHOT"
+                },
+                "GATK4_MUTECT2_ALL": {
+                    "gatk4": "4.6.2.0-SNAPSHOT"
+                },
+                "GATK4_MUTECT2_TARGETED": {
+                    "gatk4": "4.6.2.0-SNAPSHOT"
+                },
+                "PICARD_BUILDBAMINDEX": {
+                    "picard": "3.4.0"
+                },
+                "PICARD_BUILDBAMINDEX_2": {
+                    "picard": "3.4.0"
+                },
+                "PICARD_CREATESEQUENCEDICTIONARY": {
+                    "picard": "3.4.0"
+                },
+                "PICARD_MARKDUPLICATES": {
+                    "picard": "3.4.0"
+                },
+                "PICARD_SAMFORMATCONVERTER": {
+                    "picard": "3.4.0"
+                },
+                "PICARD_SORTSAM": {
+                    "picard": "3.4.0"
+                },
+                "SAMTOOLS_DEPTH": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_VIEW": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_VIEW_MAPPED": {
+                    "samtools": "1.22.1"
+                },
+                "SAMTOOLS_VIEW_UNMAPPED": {
+                    "samtools": "1.22.1"
+                },
+                "TRIMMOMATIC": {
+                    "trimmomatic": 0.39
+                },
+                "VARPIPE_BWAMEM": {
+                    "bwa": "0.7.19-r1273"
+                },
+                "VARPIPE_COVERAGEANALYSIS": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_CREATEANNOTATIONS_ALL": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_CREATEANNOTATIONS_TARGETED": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_INTERPRETATION": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_LINEAGE": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_PARSEANNOTATIONS_ALL": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_PARSEANNOTATIONS_TARGETED": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_PDF": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_REPORT": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_SNPEFF_ALL": {
+                    "snpeff": "5.2f"
+                },
+                "VARPIPE_SNPEFF_TARGETED": {
+                    "snpeff": "5.2f"
+                },
+                "VARPIPE_STRUCTURALVARIANTS": {
+                    "python": "3.12.3"
+                },
+                "VARPIPE_TAR": {
+                    "tar": 1.35
+                },
+                "Workflow": {
+                    "amd-ph-core/tbvarpipe": "v1.2.0"
+                }
+            },
+            [
+                "aggregate_outputs",
+                "multiqc",
+                "multiqc/multiqc_data",
+                "multiqc/multiqc_data/llms-full.txt",
+                "multiqc/multiqc_data/multiqc.log",
+                "multiqc/multiqc_data/multiqc.parquet",
+                "multiqc/multiqc_data/multiqc_citations.txt",
+                "multiqc/multiqc_data/multiqc_data.json",
+                "multiqc/multiqc_data/multiqc_general_stats.txt",
+                "multiqc/multiqc_data/multiqc_picard_dups.txt",
+                "multiqc/multiqc_data/multiqc_snpeff.txt",
+                "multiqc/multiqc_data/multiqc_software_versions.txt",
+                "multiqc/multiqc_data/multiqc_sources.txt",
+                "multiqc/multiqc_data/picard_MarkIlluminaAdapters_histogram.txt",
+                "multiqc/multiqc_data/picard_MeanQualityByCycle_histogram.txt",
+                "multiqc/multiqc_data/picard_MeanQualityByCycle_histogram_1.txt",
+                "multiqc/multiqc_data/picard_QualityScoreDistribution_histogram.txt",
+                "multiqc/multiqc_data/picard_deduplication.txt",
+                "multiqc/multiqc_data/snpeff_effects.txt",
+                "multiqc/multiqc_data/snpeff_variant_effects_class.txt",
+                "multiqc/multiqc_data/snpeff_variant_effects_impact.txt",
+                "multiqc/multiqc_data/snpeff_variant_effects_region.txt",
+                "multiqc/multiqc_plots",
+                "multiqc/multiqc_plots/pdf",
+                "multiqc/multiqc_plots/pdf/picard_deduplication-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/picard_deduplication-pct.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_effects-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_effects-pct.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_class-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_class-log.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_class-pct-log.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_class-pct.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_impact-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_impact-log.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_impact-pct-log.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_impact-pct.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_region-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_region-log.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_region-pct-log.pdf",
+                "multiqc/multiqc_plots/pdf/snpeff_variant_effects_region-pct.pdf",
+                "multiqc/multiqc_plots/png",
+                "multiqc/multiqc_plots/png/picard_deduplication-cnt.png",
+                "multiqc/multiqc_plots/png/picard_deduplication-pct.png",
+                "multiqc/multiqc_plots/png/snpeff_effects-cnt.png",
+                "multiqc/multiqc_plots/png/snpeff_effects-pct.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_class-cnt.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_class-log.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_class-pct-log.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_class-pct.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_impact-cnt.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_impact-log.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_impact-pct-log.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_impact-pct.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_region-cnt.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_region-log.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_region-pct-log.png",
+                "multiqc/multiqc_plots/png/snpeff_variant_effects_region-pct.png",
+                "multiqc/multiqc_plots/svg",
+                "multiqc/multiqc_plots/svg/picard_deduplication-cnt.svg",
+                "multiqc/multiqc_plots/svg/picard_deduplication-pct.svg",
+                "multiqc/multiqc_plots/svg/snpeff_effects-cnt.svg",
+                "multiqc/multiqc_plots/svg/snpeff_effects-pct.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_class-cnt.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_class-log.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_class-pct-log.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_class-pct.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_impact-cnt.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_impact-log.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_impact-pct-log.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_impact-pct.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_region-cnt.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_region-log.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_region-pct-log.svg",
+                "multiqc/multiqc_plots/svg/snpeff_variant_effects_region-pct.svg",
+                "multiqc/multiqc_report.html",
+                "pipeline_info",
+                "pipeline_info/tbvarpipe_software_components_git_sha.yml",
+                "pipeline_info/tbvarpipe_software_mqc_versions.yml",
+                "samples",
+                "samples/SRR24827267",
+                "samples/SRR24827267/varpipe",
+                "samples/SRR24827267/varpipe/SRR24827267.lineage_report.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_DR_loci_Final_annotation.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_DR_loci_annotation.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_DR_loci_raw_annotation.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_Lineage.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_full_Final_annotation.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_full_annotation.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_full_raw_annotation.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_genome_region_coverage.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_interpretation.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_report.pdf",
+                "samples/SRR24827267/varpipe/SRR24827267_stats.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_structural_variants.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_summary.txt",
+                "samples/SRR24827267/varpipe/SRR24827267_target_region_coverage.txt",
+                "samples/SRR24827272",
+                "samples/SRR24827272/varpipe",
+                "samples/SRR24827272/varpipe/SRR24827272_genome_region_coverage.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_stats.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_structural_variants.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_target_region_coverage.txt"
+            ],
+            [
+                "multiqc_citations.txt:md5,47e39f5f5f05da6bc38d13aa81fe8b6e",
+                "multiqc_general_stats.txt:md5,c13b77f41cd44f144d3c5ee83ca16dc0",
+                "multiqc_picard_dups.txt:md5,db61f7b0f39f09d9a0236166ccebad5c",
+                "multiqc_snpeff.txt:md5,6f2592b754052093efeee43b755b2aa3",
+                "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_MeanQualityByCycle_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_MeanQualityByCycle_histogram_1.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_QualityScoreDistribution_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                "picard_deduplication.txt:md5,50208eb5fd8ccc2f0cc61a6dc02a6567",
+                "snpeff_effects.txt:md5,210fb81ce30d6c475681996f4369bb1f",
+                "snpeff_variant_effects_class.txt:md5,b69b77de964cc7b2cf9a917aa1575cf6",
+                "snpeff_variant_effects_impact.txt:md5,c113fc8af0188ead2571edb461c884f1",
+                "snpeff_variant_effects_region.txt:md5,79829593d3ad50f1bee641f15609b6a4",
+                "SRR24827267.lineage_report.txt:md5,f2d1c7200d2ac5f8af634992f547a83b",
+                "SRR24827267_DR_loci_Final_annotation.txt:md5,f83f941e7f15d5ea5a318e6583b16db0",
+                "SRR24827267_DR_loci_annotation.txt:md5,4e4b56909fa850103fd64630835e415b",
+                "SRR24827267_Lineage.txt:md5,aef4b66946d894f901b71b75f2941bc7",
+                "SRR24827267_full_Final_annotation.txt:md5,23caa7aa6e63c61cae0db63b39965128",
+                "SRR24827267_full_annotation.txt:md5,681759dc3367aecb97503346bdb7147f",
+                "SRR24827267_genome_region_coverage.txt:md5,730d88eb8c24335050724185351c4c6f",
+                "SRR24827267_interpretation.txt:md5,c19d780cc005ae4c5d81e6d4f24946d2",
+                "SRR24827267_structural_variants.txt:md5,247f04947f20abf897330a16ce069774",
+                "SRR24827267_target_region_coverage.txt:md5,9dbd41d05bbe3d87e069564ade15fab1",
+                "SRR24827272_genome_region_coverage.txt:md5,37a107085966a1e5e86448806397aade",
+                "SRR24827272_structural_variants.txt:md5,f15043524894051a74283c435bc57d87",
+                "SRR24827272_target_region_coverage.txt:md5,683d6c7901b78a5b023522ff7792da31"
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-03-20T22:46:20.394858241"
+    }
+}

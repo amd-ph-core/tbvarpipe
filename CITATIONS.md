@@ -1,0 +1,85 @@
+# amd-ph-core/tbvarpipe: Citations
+
+## [nf-core](https://pubmed.ncbi.nlm.nih.gov/32055031/)
+
+> Ewels PA, Peltzer A, Fillinger S, Patel H, Alneberg J, Wilm A, Garcia MU, Di Tommaso P, Nahnsen S. The nf-core framework for community-curated bioinformatics pipelines. Nat Biotechnol. 2020 Mar;38(3):276-278. doi: 10.1038/s41587-020-0439-x. PubMed PMID: 32055031.
+
+## [Nextflow](https://pubmed.ncbi.nlm.nih.gov/28398311/)
+
+> Di Tommaso P, Chatzou M, Floden EW, Barja PP, Palumbo E, Notredame C. Nextflow enables reproducible computational workflows. Nat Biotechnol. 2017 Apr 11;35(4):316-319. doi: 10.1038/nbt.3820. PubMed PMID: 28398311.
+
+## Pipeline tools
+
+- [BWA (Burrows-Wheeler Aligner)](https://pubmed.ncbi.nlm.nih.gov/19451168/)
+
+  > Li, H., et al. (2009). Fast and accurate short read alignment with Burrows-Wheeler Transform. _Bioinformatics_, 25(14), 1754-1760. doi: 10.1093/bioinformatics/btp324.
+
+- [cat](https://www.gnu.org/software/coreutils/)
+
+  > GNU Core Utilities. Available at: https://www.gnu.org/software/coreutils/.
+
+- [Minimap2](https://pubmed.ncbi.nlm.nih.gov/29750242/)
+
+  > Li, H. (2018). Minimap2: pairwise alignment for nucleotide sequences. _Bioinformatics_, 34(18), 3094-3100. doi: 10.1093/bioinformatics/bty191.
+
+- [Samtools](https://pubmed.ncbi.nlm.nih.gov/19505943/)
+
+  > Li, H., et al. (2009). The Sequence Alignment/Map format and SAMtools. _Bioinformatics_, 25(16), 2078-2079. doi: 10.1093/bioinformatics/btp352.
+
+- [Clockwork](https://pubmed.ncbi.nlm.nih.gov/30002078/)
+
+  > Jackson, C., et al. (2018). Clockwork: A pipeline for automated and robust analysis of bacterial whole genome sequencing data. _Microbial Genomics_, 4(8). doi: 10.1099/mgen.0.000192.
+
+- [Pysam](https://pysam.readthedocs.io/)
+
+  > Pysam Development Team. Pysam: A Python module for reading and manipulating SAM/BAM/CRAM files. Available at: https://pysam.readthedocs.io/.
+
+- [Pyfastaq](https://github.com/sanger-pathogens/pyfastaq)
+
+  > Pyfastaq Development Team. Pyfastaq: A Python library for FASTA/FASTQ file manipulation. Available at: https://github.com/sanger-pathogens/pyfastaq.
+
+- [GATK (Genome Analysis Toolkit)](https://pubmed.ncbi.nlm.nih.gov/20644199/)
+
+  > McKenna, A., et al. (2010). The Genome Analysis Toolkit: A MapReduce framework for analyzing next-generation DNA sequencing data. _Genome Research_, 20(9), 1297-1303. doi: 10.1101/gr.107524.110.
+
+- [Picard](https://broadinstitute.github.io/picard/)
+
+  > Broad Institute. (2021). Picard toolkit. Broad Institute, GitHub repository. Available at: https://broadinstitute.github.io/picard/.
+
+- [Trimmomatic](https://pubmed.ncbi.nlm.nih.gov/24695404/)
+
+  > Bolger, A. M., et al. (2014). Trimmomatic: A flexible trimmer for Illumina sequence data. _Bioinformatics_, 30(15), 2114-2120. doi: 10.1093/bioinformatics/btu170.
+
+- [SnpEff](https://pubmed.ncbi.nlm.nih.gov/22728672/)
+
+  > Cingolani, P., et al. (2012). A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff. _Fly_, 6(2), 80-92. doi: 10.4161/fly.19695.
+
+- [Python](https://www.python.org/)
+
+  > Python Software Foundation. Python Language Reference, version 3. Available at: https://www.python.org/.
+
+- [tar](https://www.gnu.org/software/tar/)
+
+  > GNU tar. Available at: https://www.gnu.org/software/tar/.
+
+## Software packaging/containerisation tools
+
+- [Anaconda](https://anaconda.com)
+
+  > Anaconda Software Distribution. Computer software. Vers. 2-2.4.0. Anaconda, Nov. 2016. Web.
+
+- [Bioconda](https://pubmed.ncbi.nlm.nih.gov/29967506/)
+
+  > Grüning B, Dale R, Sjödin A, Chapman BA, Rowe J, Tomkins-Tinch CH, Valieris R, Köster J; Bioconda Team. Bioconda: sustainable and comprehensive software distribution for the life sciences. Nat Methods. 2018 Jul;15(7):475-476. doi: 10.1038/s41592-018-0046-7. PubMed PMID: 29967506.
+
+- [BioContainers](https://pubmed.ncbi.nlm.nih.gov/28379341/)
+
+  > da Veiga Leprevost F, Grüning B, Aflitos SA, Röst HL, Uszkoreit J, Barsnes H, Vaudel M, Moreno P, Gatto L, Weber J, Bai M, Jimenez RC, Sachsenberg T, Pfeuffer J, Alvarez RV, Griss J, Nesvizhskii AI, Perez-Riverol Y. BioContainers: an open-source and community-driven framework for software standardization. Bioinformatics. 2017 Aug 15;33(16):2580-2582. doi: 10.1093/bioinformatics/btx192. PubMed PMID: 28379341; PubMed Central PMCID: PMC5870671.
+
+- [Docker](https://dl.acm.org/doi/10.5555/2600239.2600241)
+
+  > Merkel, D. (2014). Docker: lightweight linux containers for consistent development and deployment. Linux Journal, 2014(239), 2. doi: 10.5555/2600239.2600241.
+
+- [Singularity](https://pubmed.ncbi.nlm.nih.gov/28494014/)
+
+  > Kurtzer GM, Sochat V, Bauer MW. Singularity: Scientific containers for mobility of compute. PLoS One. 2017 May 11;12(5):e0177459. doi: 10.1371/journal.pone.0177459. eCollection 2017. PubMed PMID: 28494014; PubMed Central PMCID: PMC5426675.

@@ -1,0 +1,37 @@
+nextflow_pipeline {
+
+    name "Test pipeline: amd-ph-core/tbvarpipe is a bioinformatics pipeline that contains a refactored version of the CDC Varpipe-WGS pipeline originally developed by the Division of TB Elimination to perform data cleaning and analysis (typing and variant detection)."
+    script "../main.nf"
+    tag "pipeline"
+    config "./nextflow.config"
+
+    test("-profile test") {
+
+        when {
+            params {
+                outdir               = "$outputDir"
+                static_assets        = System.getenv('STATIC_ASSETS')
+            }
+        }
+
+        then {
+            // stable_name: All files + folders in ${params.outdir}/ with a stable name
+            def stable_name = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}','aggregate_outputs/*.tar.gz'])
+            // stable_path: All files in ${params.outdir}/ with stable content
+            def stable_path = getAllFilesFromDir(params.outdir, ignoreFile: 'tests/.nftignore')
+            assertAll(
+                { assert workflow.success },
+                { assert snapshot(
+                    // Number of successful tasks
+                    workflow.trace.succeeded().size(),
+                    // pipeline versions.yml file for multiqc from which Nextflow version is removed because we tests pipelines on multiple Nextflow versions
+                    removeNextflowVersion("$outputDir/pipeline_info/tbvarpipe_software_mqc_versions.yml"),
+                    // All stable path name, with a relative path
+                    stable_name,
+                    // All files with stable contents
+                    stable_path
+                ).match() }
+            )
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.DS_Store
+samples/*/varpipe/*_stats.txt
+samples/*/varpipe/*_summary.txt
+samples/*/varpipe/*_report.pdf
+samples/*/varpipe/*_qc_log.txt
+samples/*/varpipe/*_raw_annotation.txt
+aggregate_outputs/*.tar.gz
+fastqc/*/*.{html,zip}
+pipeline_info/*.{html,json,txt,yml}
+multiqc/multiqc_data/multiqc_data.json
+multiqc/multiqc_data/multiqc_sources.txt
+multiqc/multiqc_data/multiqc_software_versions.txt
+multiqc/multiqc_data/llms-full.txt
+multiqc/multiqc_data/multiqc.log
+multiqc/multiqc_data/multiqc.parquet
+multiqc/multiqc_plots/{svg,pdf,png}/*.{svg,pdf,png}
+multiqc/multiqc_report.html
