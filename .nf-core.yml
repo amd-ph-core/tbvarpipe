@@ -10,6 +10,7 @@ lint:
     - .github/ISSUE_TEMPLATE/config.yml
     - .github/workflows/awstest.yml
     - .github/workflows/awsfulltest.yml
+    - .github/workflows/branch.yml
     - .github/workflows/linting_comment.yml
     - .github/workflows/nf-test.yml
     - .github/actions/get-shards/action.yml
