@@ -212,6 +212,13 @@
                     "description": "Current system user, set by institutional config for resource labels.",
                     "hidden": true,
                     "fa_icon": "fas fa-users-cog"
+                },
+                "container_org": {
+                    "type": "string",
+                    "description": "Container Image organization for pipeline containers.",
+                    "fa_icon": "fas fa-box",
+                    "default": "cdc-amd/",
+                    "hidden": true
                 }
             }
         },

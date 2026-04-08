@@ -1,13 +1,22 @@
 {
     "-profile test": {
         "content": [
-            55,
+            69,
             {
                 "BWA_INDEX": {
                     "bwa": "0.7.19-r1273"
                 },
                 "CAT_FASTQ": {
                     "cat": 9.4
+                },
+                "CLOCKWORK_MINIMAP2": {
+                    "minimap2": "2.30-r1287",
+                    "samtools": "1.22.1"
+                },
+                "CLOCKWORK_REMOVECONTAM": {
+                    "clockwork": "0.12.5",
+                    "pysam": "0.23.3",
+                    "pyfastaq": "3.17.0"
                 },
                 "GATK4_FILTERMUTECTCALLS_ALL": {
                     "gatk4": "4.6.2.0-SNAPSHOT"
@@ -206,46 +215,70 @@
                 "samples/SRR24827267/varpipe/SRR24827267_structural_variants.txt",
                 "samples/SRR24827267/varpipe/SRR24827267_summary.txt",
                 "samples/SRR24827267/varpipe/SRR24827267_target_region_coverage.txt",
+                "samples/SRR24827267/varpipe/clockwork",
+                "samples/SRR24827267/varpipe/clockwork/SRR24827267.counts.tsv",
                 "samples/SRR24827272",
                 "samples/SRR24827272/varpipe",
+                "samples/SRR24827272/varpipe/SRR24827272.lineage_report.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_DR_loci_Final_annotation.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_DR_loci_annotation.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_DR_loci_raw_annotation.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_Lineage.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_full_Final_annotation.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_full_annotation.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_full_raw_annotation.txt",
                 "samples/SRR24827272/varpipe/SRR24827272_genome_region_coverage.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_interpretation.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_report.pdf",
                 "samples/SRR24827272/varpipe/SRR24827272_stats.txt",
                 "samples/SRR24827272/varpipe/SRR24827272_structural_variants.txt",
-                "samples/SRR24827272/varpipe/SRR24827272_target_region_coverage.txt"
+                "samples/SRR24827272/varpipe/SRR24827272_summary.txt",
+                "samples/SRR24827272/varpipe/SRR24827272_target_region_coverage.txt",
+                "samples/SRR24827272/varpipe/clockwork",
+                "samples/SRR24827272/varpipe/clockwork/SRR24827272.counts.tsv"
             ],
             [
                 "multiqc_citations.txt:md5,47e39f5f5f05da6bc38d13aa81fe8b6e",
-                "multiqc_general_stats.txt:md5,c13b77f41cd44f144d3c5ee83ca16dc0",
-                "multiqc_picard_dups.txt:md5,db61f7b0f39f09d9a0236166ccebad5c",
-                "multiqc_snpeff.txt:md5,6f2592b754052093efeee43b755b2aa3",
+                "multiqc_general_stats.txt:md5,89e469e34e60fb3fef09366ced28d486",
+                "multiqc_picard_dups.txt:md5,48f64827fbf0830116937fb0b9acf387",
+                "multiqc_snpeff.txt:md5,730d6184c11fb9ae505da370cc084e65",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_MeanQualityByCycle_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_MeanQualityByCycle_histogram_1.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
                 "picard_QualityScoreDistribution_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
-                "picard_deduplication.txt:md5,50208eb5fd8ccc2f0cc61a6dc02a6567",
-                "snpeff_effects.txt:md5,210fb81ce30d6c475681996f4369bb1f",
-                "snpeff_variant_effects_class.txt:md5,b69b77de964cc7b2cf9a917aa1575cf6",
-                "snpeff_variant_effects_impact.txt:md5,c113fc8af0188ead2571edb461c884f1",
-                "snpeff_variant_effects_region.txt:md5,79829593d3ad50f1bee641f15609b6a4",
+                "picard_deduplication.txt:md5,aac365642c43487bed1c9420915e9675",
+                "snpeff_effects.txt:md5,810bfb1922b8322a9d214d09074b49a1",
+                "snpeff_variant_effects_class.txt:md5,1a591b37abc27e04fd7b5440b3fc0f75",
+                "snpeff_variant_effects_impact.txt:md5,c5b2a48fa37b5bff723cc456b916cb21",
+                "snpeff_variant_effects_region.txt:md5,b364e6368059c00fdc1247572fccfb7f",
                 "SRR24827267.lineage_report.txt:md5,f2d1c7200d2ac5f8af634992f547a83b",
                 "SRR24827267_DR_loci_Final_annotation.txt:md5,f83f941e7f15d5ea5a318e6583b16db0",
                 "SRR24827267_DR_loci_annotation.txt:md5,4e4b56909fa850103fd64630835e415b",
                 "SRR24827267_Lineage.txt:md5,aef4b66946d894f901b71b75f2941bc7",
-                "SRR24827267_full_Final_annotation.txt:md5,23caa7aa6e63c61cae0db63b39965128",
-                "SRR24827267_full_annotation.txt:md5,681759dc3367aecb97503346bdb7147f",
-                "SRR24827267_genome_region_coverage.txt:md5,730d88eb8c24335050724185351c4c6f",
+                "SRR24827267_full_Final_annotation.txt:md5,825bd3615c1d8701c7914714447c6ba1",
+                "SRR24827267_full_annotation.txt:md5,60c6e971b2e7e54128a0bbf9b58d0b51",
+                "SRR24827267_genome_region_coverage.txt:md5,455b1ce70e39aa0ae7082fb6802cdccc",
                 "SRR24827267_interpretation.txt:md5,c19d780cc005ae4c5d81e6d4f24946d2",
                 "SRR24827267_structural_variants.txt:md5,247f04947f20abf897330a16ce069774",
                 "SRR24827267_target_region_coverage.txt:md5,9dbd41d05bbe3d87e069564ade15fab1",
-                "SRR24827272_genome_region_coverage.txt:md5,37a107085966a1e5e86448806397aade",
+                "SRR24827267.counts.tsv:md5,513363150e04a4be6debd8550100d6b4",
+                "SRR24827272.lineage_report.txt:md5,e95a088f83d8b23a9f2a8ba78b43a0a4",
+                "SRR24827272_DR_loci_Final_annotation.txt:md5,6d1e7a376b867a8dc4205532f6c9ab54",
+                "SRR24827272_DR_loci_annotation.txt:md5,ef49cd5e455aa35404d037e008c19390",
+                "SRR24827272_Lineage.txt:md5,7e8e1b315c0e99a5780b2ffc4cf352e9",
+                "SRR24827272_full_Final_annotation.txt:md5,2054c2f8c078e0451bba69478f421737",
+                "SRR24827272_full_annotation.txt:md5,ed4474d09d54ca9ba7f8e9fbd574bd5f",
+                "SRR24827272_genome_region_coverage.txt:md5,d2a109d6d25c193e25455ba7021d6342",
+                "SRR24827272_interpretation.txt:md5,4152115e1d7d3deb4a93d365324f429f",
                 "SRR24827272_structural_variants.txt:md5,f15043524894051a74283c435bc57d87",
-                "SRR24827272_target_region_coverage.txt:md5,683d6c7901b78a5b023522ff7792da31"
+                "SRR24827272_target_region_coverage.txt:md5,683d6c7901b78a5b023522ff7792da31",
+                "SRR24827272.counts.tsv:md5,4cf4e4fb316e4d06b616635524cc7e50"
             ]
         ],
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.2",
+            "nextflow": "24.10.6"
         },
-        "timestamp": "2026-03-20T22:46:20.394858241"
+        "timestamp": "2026-02-27T12:11:15.661938393"
     }
 }
