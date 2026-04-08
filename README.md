@@ -1,14 +1,3 @@
-```md
-Org: NCEZID
-Contact Email: ncezid_shareit@cdc.gov
-Exemption: exemptByAgencySystem
-Exemption Justification: Code is owned by CDC surveillance programs; this repository includes compatibility changes for AMD Platform
-Status: Maintained
-Keywords: bioinformatics
-Version: 1.2.0
-Contract#: 47QFCA23F0058
-```
-
 # amd-ph-core/tbvarpipe
 
 [![GitHub Actions Linting Status](https://github.com/amd-ph-core/tbvarpipe/actions/workflows/linting.yml/badge.svg)](https://github.com/amd-ph-core/tbvarpipe/actions/workflows/linting.yml)
@@ -169,3 +158,12 @@ published through the [CDC web site](http://www.cdc.gov).
 ## Additional Standard Notices
 
 Please refer to [CDC's Template Repository](https://github.com/CDCgov/template) for more information about [contributing to this repository](https://github.com/CDCgov/template/blob/main/CONTRIBUTING.md), [public domain notices and disclaimers](https://github.com/CDCgov/template/blob/main/DISCLAIMER.md), and [code of conduct](https://github.com/CDCgov/template/blob/main/code-of-conduct.md).
+
+## SHARE IT Act Metadata
+
+Org: NCEZID
+Contact Email: ncezid_shareit@cdc.gov
+Status: Maintained
+Keywords: bioinformatics
+Version: 1.2.0
+Contract#: 47QFCA23F0058
