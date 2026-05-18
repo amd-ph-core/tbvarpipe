@@ -27,18 +27,22 @@ performance of this software.
 
 The Laboratory Branch (LB) of the Division of Tuberculosis Elimination
 developed this bioinformatic pipeline for analyzing whole genome sequencing
-data generated on Illumina platforms. This is not a controlled document. The
-performance characteristics as generated at Centers for Disease Control and
-Prevention (CDC) are specific to the version as written. These documents are
-provided by LB solely as an example for how this test performed within LB.
-The recipient testing laboratory is responsible for generating validation or
-verification data as applicable to establish performance characteristics as
-required by the testing laboratory's policies, applicable regulations, and
-quality system standards. These data are only for the sample and specimen
-types and conditions described in this procedure. Tests or protocols may
-include hazardous reagents or biological agents. No indemnification for any
-loss, claim, damage, or liability is provided for the party receiving an assay
-or protocol. Use of trade names and commercial sources are for identification
-only and do not constitute endorsement by the Public Health Service, the United
-States Department of Health and Human Services, or the Centers for Disease
-Control and Prevention.
+data generated on Illumina platforms. This pipeline was developed by the
+Centers for Disease Control and Prevention (CDC) for public health surveillance
+and investigational purposes. It has not been validated by CDC for clinical
+diagnostic use. Laboratories that choose to use this pipeline for clinical
+testing are solely responsible for performing their own validation in accordance
+with CLIA regulations and any other applicable requirements. This is not a
+controlled document. The performance characteristics as generated at CDC are
+specific to the version as written. These documents are provided by LB solely
+as an example for how this test performed within LB. The recipient testing
+laboratory is responsible for generating validation or verification data as
+applicable to establish performance characteristics as required by the testing
+laboratory's policies, applicable regulations, and quality system standards.
+These data are only for the sample and specimen types and conditions described
+in this procedure. Tests or protocols may include hazardous reagents or
+biological agents. No indemnification for any loss, claim, damage, or liability
+is provided for the party receiving an assay or protocol. Use of trade names and
+commercial sources are for identification only and do not constitute endorsement
+by the Public Health Service, the United States Department of Health and Human
+Services, or the Centers for Disease Control and Prevention.

@@ -3,6 +3,18 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.2.1 - [2026-05-18]
+
+### `Changed`
+
+- Updated `amd-ph-core` module and subworkflow SHAs to latest pinned commits
+- Updated `DISCLAIMER.md` language
+- Updated CI `static_assets` path for test pipeline workflow
+
+### `Fixed`
+
+- Updated nf-test snapshots for `picard/sortsam` and default pipeline test
+
 ## v1.2.0 - [2026-03-23]
 
 ### `Changed`
