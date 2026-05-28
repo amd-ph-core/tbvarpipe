@@ -15,8 +15,8 @@
                 },
                 "CLOCKWORK_REMOVECONTAM": {
                     "clockwork": "0.12.5",
-                    "pysam": "0.23.3",
-                    "pyfastaq": "3.17.0"
+                    "pyfastaq": "3.17.0",
+                    "pysam": "0.23.3"
                 },
                 "GATK4_FILTERMUTECTCALLS_ALL": {
                     "gatk4": "4.6.2.0-SNAPSHOT"

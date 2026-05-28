@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### `Changed`
 
 - Updated `amd-ph-core` module and subworkflow SHAs to latest pinned commits
-- Updated `DISCLAIMER.md` language
+- Updated `DISCLAIMER.md` language and added disclaimer statement to `README.md`
 - Updated CI `static_assets` path for test pipeline workflow
 
 ### `Fixed`
