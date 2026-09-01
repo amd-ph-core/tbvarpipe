@@ -57,14 +57,14 @@ Prior to proceeding, ensure the following requirements are met:
 | CAT_FASTQ                            |    2 |   2 GB |
 | CLOCKWORK_MINIMAP2                   |    6 |  36 GB |
 | CLOCKWORK_REMOVECONTAM               |    2 |  12 GB |
-| SAMTOOLS*VIEW, SAMTOOLS_VIEW*\*      |    1 |   2 GB |
-| VARPIPE\_\*(custom analysis modules) |    2 | 500 MB |
+| SAMTOOLS_VIEW, SAMTOOLS_VIEW_*       |    1 |   2 GB |
+| VARPIPE_*(custom analysis modules)   |    2 | 500 MB |
 | BWA_INDEX                            |    2 |   4 GB |
 | SAMTOOLS_FAIDX                       |    3 | 500 MB |
-| PICARD\_\*                           |    3 |  12 GB |
+| PICARD_*                             |    3 |  12 GB |
 | VARPIPE_BWAMEM                       |    3 |   6 GB |
-| VARPIPE*SNPEFF*\*                    |    3 |   6 GB |
-| GATK4\_\*                            |    4 |  24 GB |
+| VARPIPE_SNPEFF_*                     |    3 |   6 GB |
+| GATK4_*                              |    4 |  24 GB |
 | TRIMMOMATIC                          |    2 |   2 GB |
 | VARPIPE_TAR                          |    3 |   1 GB |
 | MULTIQC                              |    1 |   6 GB |
