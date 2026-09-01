@@ -17,13 +17,13 @@ Docker images as needed.
    - [Step 3: Create Configuration File](#step-3-create-configuration-file)
    - [Step 4: Download the Sample Sheet](#step-4-download-the-sample-sheet)
    - [Step 5: Run the Pipeline](#step-5-run-the-pipeline)
-        - [To run via Docker](#to-run-via-docker)
-        - [To run via Singularity](#to-run-via-singularity)
+     - [To run via Docker](#to-run-via-docker)
+     - [To run via Singularity](#to-run-via-singularity)
 3. [Expected Output](#expected-output)
 4. [Troubleshooting](#troubleshooting)
-    - [Stale Revision Error](#stale-revision-error)
-    - [Sample Sheet Column Mismatch](#sample-sheet-column-mismatch)
-    - [Static Assets Not Found](#static-assets-not-found)
+   - [Stale Revision Error](#stale-revision-error)
+   - [Sample Sheet Column Mismatch](#sample-sheet-column-mismatch)
+   - [Static Assets Not Found](#static-assets-not-found)
 5. [Complete Setup Script](#complete-setup-script)
 6. [Appendix A: References](#appendix-a-references)
 7. [Appendix B: Version History](#appendix-b-version-history)
@@ -33,41 +33,41 @@ Docker images as needed.
 
 Prior to proceeding, ensure the following requirements are met:
 
-  - **Nextflow** installed and available on your PATH.
-      - Versions 24.10, 25.04, or 25.10 are recommended.
+- **Nextflow** installed and available on your PATH.
+  - Versions 24.10, 25.04, or 25.10 are recommended.
 
-  - **A supported container runtime** is installed and running.
-      - Docker or Singularity (for HPC)
+- **A supported container runtime** is installed and running.
+  - Docker or Singularity (for HPC)
 
-  - **Internet connectivity** is available to allow retrieval of
-    required containers from quay.io and cloning of the pipeline
-    repository from GitHub.
+- **Internet connectivity** is available to allow retrieval of
+  required containers from quay.io and cloning of the pipeline
+  repository from GitHub.
 
-  - **Sufficient local disk space, CPU, and memory** is available to
-    accommodate the pipeline's resource requirements.
-    - 6 CPUs and 32 GB of RAM
-    - 20 GB of disk space free
-    - See [Table 1](#table-1-required-resources-to-run-amd-ph-coretbvarpipe)
-      for details
+- **Sufficient local disk space, CPU, and memory** is available to
+  accommodate the pipeline's resource requirements.
+  - 6 CPUs and 32 GB of RAM
+  - 20 GB of disk space free
+  - See [Table 1](#table-1-required-resources-to-run-amd-ph-coretbvarpipe)
+    for details
 
 #### Table 1: Required resources to run amd-ph-core/tbvarpipe
 
-| Process Name                       | CPUs | Memory |
-| ---------------------------------- | ---: | -----: |
-| CAT_FASTQ                          |    2 |   2 GB |
-| CLOCKWORK_MINIMAP2                 |    6 |  36 GB |
-| CLOCKWORK_REMOVECONTAM             |    2 |  12 GB |
-| SAMTOOLS_VIEW, SAMTOOLS_VIEW_*     |    1 |   2 GB |
-| VARPIPE_*(custom analysis modules) |    2 | 500 MB |
-| BWA_INDEX                          |    2 |   4 GB |
-| SAMTOOLS_FAIDX                     |    3 | 500 MB |
-| PICARD_*                           |    3 |  12 GB |
-| VARPIPE_BWAMEM                     |    3 |   6 GB |
-| VARPIPE_SNPEFF_*                   |    3 |   6 GB |
-| GATK4_*                            |    4 |  24 GB |
-| TRIMMOMATIC                        |    2 |   2 GB |
-| VARPIPE_TAR                        |    3 |   1 GB |
-| MULTIQC                            |    1 |   6 GB |
+| Process Name                         | CPUs | Memory |
+| ------------------------------------ | ---: | -----: |
+| CAT_FASTQ                            |    2 |   2 GB |
+| CLOCKWORK_MINIMAP2                   |    6 |  36 GB |
+| CLOCKWORK_REMOVECONTAM               |    2 |  12 GB |
+| SAMTOOLS*VIEW, SAMTOOLS_VIEW*\*      |    1 |   2 GB |
+| VARPIPE\_\*(custom analysis modules) |    2 | 500 MB |
+| BWA_INDEX                            |    2 |   4 GB |
+| SAMTOOLS_FAIDX                       |    3 | 500 MB |
+| PICARD\_\*                           |    3 |  12 GB |
+| VARPIPE_BWAMEM                       |    3 |   6 GB |
+| VARPIPE*SNPEFF*\*                    |    3 |   6 GB |
+| GATK4\_\*                            |    4 |  24 GB |
+| TRIMMOMATIC                          |    2 |   2 GB |
+| VARPIPE_TAR                          |    3 |   1 GB |
+| MULTIQC                              |    1 |   6 GB |
 
 ## Running the Pipeline
 
@@ -92,8 +92,8 @@ your working directory.
 
 ```shell
 # Download the static assets archive and extract in place
-wget https://ftp.cdc.gov/pub/AMD_Platform/tbvarpipe-static-assets-1.0.0.tar.gz
-tar -xvf tbvarpipe-static-assets-1.0.0.tar.gz
+wget https://cdc-amd-platform.s3.us-east-1.amazonaws.com/amd-ph-core-static-assets-tarballs/tbvarpipe-static-assets-1.0.1.tar.gz
+tar -xvf tbvarpipe-static-assets-1.0.1.tar.gz
 ```
 
 After extraction you should see a directory named
@@ -105,43 +105,46 @@ After extraction you should see a directory named
 
 Create a minimal Nextflow config file in your working directory (see
 [Table 2](#table-2-configuration-file-parameter-descriptions) for
-parameter descriptions). It sets three things:
+parameter descriptions). It sets four things:
 
 1.  Timestamped work directory
 2.  The path to the static assets
 3.  Timestamped output directory
+4.  Anonymous S3 access, so the public test data can be staged without
+    AWS credentials
 
 ```shell
-cat <<'EOF' > local.config 
+cat <<'EOF' > local.config
 ts = new Date().format('yyyy.MM.dd-HH.mm.ss')
-workDir = "work/${ts}" 
+workDir = "work/${ts}"
 params {
   static_assets = "${System.getenv('PWD')}/amd-ph-core-static-assets"
   outdir = "results/${ts}"
+}
+aws {
+  client {
+    anonymous = true
+  }
 }
 EOF
 ```
 
 #### Table 2: Configuration file parameter descriptions
 
-| Parameter / Setting    | Description |
-| ---------------------- | ----------- |
-| `ts`                   | Groovy expression that generates a timestamp string (e.g. 2025.03.21-14.30.00). Used to make every run directory unique. |
-| `workDir`              | Nextflow intermediate/work directory. Scoped per run to avoid collisions when re-running. |
-| `params.static_assets` | Path to the extracted static-assets directory. Must match the directory name produced by the tar extraction in Step 2. |
-| `params.outdir`        | Final results directory. Timestamped alongside workDir so inputs and outputs from each run are traceable. |
+| Parameter / Setting    | Description                                                                                                                                                     |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ts`                   | Groovy expression that generates a timestamp string (e.g. 2025.03.21-14.30.00). Used to make every run directory unique.                                        |
+| `workDir`              | Nextflow intermediate/work directory. Scoped per run to avoid collisions when re-running.                                                                       |
+| `params.static_assets` | Path to the extracted static-assets directory. Must match the directory name produced by the tar extraction in Step 2.                                          |
+| `params.outdir`        | Final results directory. Timestamped alongside workDir so inputs and outputs from each run are traceable.                                                       |
+| `aws.client.anonymous` | Allows Nextflow to read the public `cdc-amd-platform` S3 bucket without AWS credentials. Required to stage the test FASTQ files referenced by the sample sheet. |
 
 ### Step 4: Download the Sample Sheet
 
-A test sample sheet is maintained in the oamd-bio-test-data repository
-on GitHub. Download it into your working directory with wget. One of
-the two test samples is expected to fail QC and will not produce all
-outputs as a result. Samples have been selected from the publicly
-available [iValiD-TB](https://www.frontiersin.org/journals/tuberculosis/articles/10.3389/ftubr.2024.1441923/full)
-dataset.
+A test sample sheet is maintained in the CDC AMD Platform public facing AWS S3 storage bucket as well as the [oamd-bio-test-data repository on GitHub](https://raw.githubusercontent.com/CDCgov/oamd-bio-test-data/refs/heads/tbmainsurveillance/samplesheet/samplesheet.csv). Download it into your working directory with wget. One of the two test samples is expected to fail QC and will not produce all outputs as a result. Samples have been selected from the publicly available [iValiD-TB](https://www.frontiersin.org/journals/tuberculosis/articles/10.3389/ftubr.2024.1441923/full) dataset.
 
 ```shell
-wget https://raw.githubusercontent.com/CDCgov/oamd-bio-test-data/refs/heads/tbmainsurveillance/samplesheet/samplesheet.csv
+wget https://cdc-amd-platform.s3.us-east-1.amazonaws.com/amd-ph-core-test-data/tbvarpipe/test-data/samplesheet.csv
 ```
 
 **NOTE**: The sample sheet uses the `fastq_1` through `fastq_8` column
@@ -187,7 +190,7 @@ export SINGULARITY_TMPDIR=$TMPDIR
 mkdir -p $TMPDIR
 ```
 
-##### Update the local.config to Direct Singularity to the Temporary Directory 
+##### Update the local.config to Direct Singularity to the Temporary Directory
 
 ```shell
 cat <<'EOF' >> local.config
@@ -210,25 +213,26 @@ nextflow run amd-ph-core/tbvarpipe \
 
 #### Table 3: Run Command Flag Descriptions
 
-| Parameter/Setting         | Description |
-| ------------------------- | ----------- |
-| `amd-ph-core/tbvarpipe`   | GitHub repository path. Nextflow resolves this automatically. |
-| `-r 1.2.1`                | Explicit git revision to run. Always pin a version to ensure reproducibility. |
+| Parameter/Setting         | Description                                                                                                                                                                                  |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `amd-ph-core/tbvarpipe`   | GitHub repository path. Nextflow resolves this automatically.                                                                                                                                |
+| `-r 1.2.1`                | Explicit git revision to run. Always pin a version to ensure reproducibility.                                                                                                                |
 | `-latest`                 | Forces Nextflow to pull the latest code at the given revision, overwriting any stale local cache. Equivalent to manually clearing `~/.nextflow/assets/amd-ph-core/tbvarpipe` before running. |
-| `-profile docker`         | Activates the Docker execution profile defined in the pipeline's nextflow.config. |
-| `-c local.config`         | Merges your local.config settings (`workDir`, `static_assets`, `outdir`) into the pipeline configuration. |
-| `--input samplesheet.csv` | Path to the sample sheet downloaded in [Step 4](#step-4-download-the-sample-sheet). |
+| `-profile docker`         | Activates the Docker execution profile defined in the pipeline's nextflow.config.                                                                                                            |
+| `-c local.config`         | Merges your local.config settings (`workDir`, `static_assets`, `outdir`) into the pipeline configuration.                                                                                    |
+| `--input samplesheet.csv` | Path to the sample sheet downloaded in [Step 4](#step-4-download-the-sample-sheet).                                                                                                          |
 
 NOTE: On first run, Nextflow will pull all Docker containers from quay.io. This may take several minutes depending on network speed. Subsequent runs with the same containers will be significantly faster.
 
-## Expected Output 
+## Expected Output
 
 After a successful run, two timestamped directories will appear in your
 working directory:
-  - `work/YYYY.MM.DD-HH.mm.ss/` -- Nextflow intermediate files (cache,
-    logs, staged inputs)
-  - `results/YYYY.MM.DD-HH.mm.ss/` -- Final pipeline outputs (VCF files,
-    reports, QC summaries)
+
+- `work/YYYY.MM.DD-HH.mm.ss/` -- Nextflow intermediate files (cache,
+  logs, staged inputs)
+- `results/YYYY.MM.DD-HH.mm.ss/` -- Final pipeline outputs (VCF files,
+  reports, QC summaries)
 
 Early in the run you will see Nextflow begin staging SRR samples
 (downloaded from SRA) and container images being pulled. The pipeline
@@ -244,7 +248,7 @@ command. If the issue persists, manually clear the cache with the
 following command and re-run.
 
 ```shell
-rm -rf ~/.nextflow/assets/amd-ph-core/tbvarpipe 
+rm -rf ~/.nextflow/assets/amd-ph-core/tbvarpipe
 ```
 
 ### Sample Sheet Column Mismatch
@@ -285,8 +289,8 @@ set -euo pipefail
 mkdir -p test-tbvarpipe && cd test-tbvarpipe
 
 # 2. Download and extract static assets
-wget https://ftp.cdc.gov/pub/AMD_Platform/tbvarpipe-static-assets-1.0.0.tar.gz
-tar -xvf tbvarpipe-static-assets-1.0.0.tar.gz
+wget https://cdc-amd-platform.s3.us-east-1.amazonaws.com/amd-ph-core-static-assets-tarballs/tbvarpipe-static-assets-1.0.1.tar.gz
+tar -xvf tbvarpipe-static-assets-1.0.1.tar.gz
 
 # 3. Write local.config
 cat <<'EOF' > local.config
@@ -296,10 +300,15 @@ params {
   static_assets = "${System.getenv('PWD')}/amd-ph-core-static-assets"
   outdir = "results/${ts}"
 }
+aws {
+  client {
+    anonymous = true
+  }
+}
 EOF
 
 # 4. Download test sample sheet
-wget https://raw.githubusercontent.com/CDCgov/oamd-bio-test-data/refs/heads/tbmainsurveillance/samplesheet/samplesheet.csv
+wget https://cdc-amd-platform.s3.us-east-1.amazonaws.com/amd-ph-core-test-data/tbvarpipe/test-data/samplesheet.csv
 
 # 5. Run the pipeline
 nextflow run amd-ph-core/tbvarpipe \
@@ -314,18 +323,18 @@ nextflow run amd-ph-core/tbvarpipe \
 
 The following table summarizes the resources referenced in this document.
 
-| Resource | Description |
-| -------- | ----------- |
-| [amd-ph-core/tbvarpipe](https://github.com/amd-ph-core/tbvarpipe/) | Public GitHub repository; README contains the canonical run command. |
+| Resource                                                                                          | Description                                                                                                                             |
+| ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [amd-ph-core/tbvarpipe](https://github.com/amd-ph-core/tbvarpipe/)                                | Public GitHub repository; README contains the canonical run command.                                                                    |
 | [CDCgov/oamd-bio-test-data](https://github.com/CDCgov/oamd-bio-test-data/tree/tbmainsurveillance) | Public GitHub repository hosting test data for AMD Platform workflows. `tbmainsurveillance` branch contains the reference sample sheet. |
-| [quay.io/us-cdcgov](https://quay.io/organization/us-cdcgov) | Public container registry |
-| [Nextflow Documentation](https://www.nextflow.io/docs/latest) | Documentation for Nextflow |
+| [quay.io/us-cdcgov](https://quay.io/organization/us-cdcgov)                                       | Public container registry                                                                                                               |
+| [Nextflow Documentation](https://www.nextflow.io/docs/latest)                                     | Documentation for Nextflow                                                                                                              |
 
 ## Appendix B: Version History
 
-| **VERSION** | **IMPLEMENTED BY** | **REVISION DATE** | **REASON** |
-| ----------- | ------------------ | ----------------- | ---------- |
-| 1.0         |  AMD Platform Team | 05/20/2026        | Provide users with instructions for setting up and running the amd-ph-core/tbvarpipe bioinformatics pipeline. |
+| **VERSION** | **IMPLEMENTED BY** | **REVISION DATE** | **REASON**                                                                                                    |
+| ----------- | ------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------- |
+| 1.0         | AMD Platform Team  | 05/20/2026        | Provide users with instructions for setting up and running the amd-ph-core/tbvarpipe bioinformatics pipeline. |
 
 ## Appendix C: Contact Information
 
