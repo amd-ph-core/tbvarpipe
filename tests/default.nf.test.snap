@@ -115,7 +115,7 @@
                     "tar": 1.35
                 },
                 "Workflow": {
-                    "amd-ph-core/tbvarpipe": "v1.2.1"
+                    "amd-ph-core/tbvarpipe": "v1.2.2"
                 }
             },
             [

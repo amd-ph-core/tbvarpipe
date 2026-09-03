@@ -1,4 +1,4 @@
-# amd-ph-core/tbvarpipe v1.2.1 Quick Start Guide
+# amd-ph-core/tbvarpipe v1.2.2 Quick Start Guide
 
 This guide walks through the end-to-end process of running the TB
 variant-calling pipeline (`tbvarpipe`) hosted in the `amd-ph-core`
@@ -52,22 +52,22 @@ Prior to proceeding, ensure the following requirements are met:
 
 #### Table 1: Required resources to run amd-ph-core/tbvarpipe
 
-| Process Name                         | CPUs | Memory |
-| ------------------------------------ | ---: | -----: |
-| CAT_FASTQ                            |    2 |   2 GB |
-| CLOCKWORK_MINIMAP2                   |    6 |  36 GB |
-| CLOCKWORK_REMOVECONTAM               |    2 |  12 GB |
-| SAMTOOLS_VIEW, SAMTOOLS_VIEW_*       |    1 |   2 GB |
-| VARPIPE_*(custom analysis modules)   |    2 | 500 MB |
-| BWA_INDEX                            |    2 |   4 GB |
-| SAMTOOLS_FAIDX                       |    3 | 500 MB |
-| PICARD_*                             |    3 |  12 GB |
-| VARPIPE_BWAMEM                       |    3 |   6 GB |
-| VARPIPE_SNPEFF_*                     |    3 |   6 GB |
-| GATK4_*                              |    4 |  24 GB |
-| TRIMMOMATIC                          |    2 |   2 GB |
-| VARPIPE_TAR                          |    3 |   1 GB |
-| MULTIQC                              |    1 |   6 GB |
+| Process Name                          | CPUs | Memory |
+| ------------------------------------- | ---: | -----: |
+| `CAT_FASTQ`                           |    2 |   2 GB |
+| `CLOCKWORK_MINIMAP2`                  |    6 |  36 GB |
+| `CLOCKWORK_REMOVECONTAM`              |    2 |  12 GB |
+| `SAMTOOLS_VIEW`, `SAMTOOLS_VIEW_*`    |    1 |   2 GB |
+| `VARPIPE_*` (custom analysis modules) |    2 | 500 MB |
+| `BWA_INDEX`                           |    2 |   4 GB |
+| `SAMTOOLS_FAIDX`                      |    3 | 500 MB |
+| `PICARD_*`                            |    3 |  12 GB |
+| `VARPIPE_BWAMEM`                      |    3 |   6 GB |
+| `VARPIPE_SNPEFF_*`                    |    3 |   6 GB |
+| `GATK4_*`                             |    4 |  24 GB |
+| `TRIMMOMATIC`                         |    2 |   2 GB |
+| `VARPIPE_TAR`                         |    3 |   1 GB |
+| `MULTIQC`                             |    1 |   6 GB |
 
 ## Running the Pipeline
 
@@ -166,7 +166,7 @@ for descriptions of all run command flags (`-c`, `-r`, etc.)
 
 ```shell
 nextflow run amd-ph-core/tbvarpipe \
-  -r 1.2.1 \
+  -r 1.2.2 \
   -latest \
   -profile docker \
   -c local.config \
@@ -204,7 +204,7 @@ EOF
 
 ```shell
 nextflow run amd-ph-core/tbvarpipe \
-  -r 1.2.1 \
+  -r 1.2.2 \
   -latest \
   -profile singularity \
   -c local.config \
@@ -216,7 +216,7 @@ nextflow run amd-ph-core/tbvarpipe \
 | Parameter/Setting         | Description                                                                                                                                                                                  |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `amd-ph-core/tbvarpipe`   | GitHub repository path. Nextflow resolves this automatically.                                                                                                                                |
-| `-r 1.2.1`                | Explicit git revision to run. Always pin a version to ensure reproducibility.                                                                                                                |
+| `-r 1.2.2`                | Explicit git revision to run. Always pin a version to ensure reproducibility.                                                                                                                |
 | `-latest`                 | Forces Nextflow to pull the latest code at the given revision, overwriting any stale local cache. Equivalent to manually clearing `~/.nextflow/assets/amd-ph-core/tbvarpipe` before running. |
 | `-profile docker`         | Activates the Docker execution profile defined in the pipeline's nextflow.config.                                                                                                            |
 | `-c local.config`         | Merges your local.config settings (`workDir`, `static_assets`, `outdir`) into the pipeline configuration.                                                                                    |
@@ -243,7 +243,7 @@ will create these directories automatically.
 ### Stale Revision Error
 
 If Nextflow reports that the current revision is stale or cannot find
-revision 1.2.1, confirm that the `-latest` flag is present in your run
+revision 1.2.2, confirm that the `-latest` flag is present in your run
 command. If the issue persists, manually clear the cache with the
 following command and re-run.
 
@@ -312,7 +312,7 @@ wget https://cdc-amd-platform.s3.us-east-1.amazonaws.com/amd-ph-core-test-data/t
 
 # 5. Run the pipeline
 nextflow run amd-ph-core/tbvarpipe \
-  -r 1.2.1 \
+  -r 1.2.2 \
   -latest \
   -profile docker \
   -c local.config \

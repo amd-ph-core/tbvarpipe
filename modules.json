@@ -7,77 +7,77 @@
                 "amd-ph-core": {
                     "clockwork/minimap2": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["fastq_clockwork_decontaminate"]
                     },
                     "clockwork/removecontam": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["fastq_clockwork_decontaminate"]
                     },
                     "picard/buildbamindex": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_processbam"]
                     },
                     "picard/samformatconverter": {
                         "branch": "main",
-                        "git_sha": "e8c5f4ac9922f4830808c38f45dda4a76ad2b908",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_processbam"]
                     },
                     "picard/sortsam": {
                         "branch": "main",
-                        "git_sha": "d960ccd2499b4d09d0630d63e6df9ee6b55b25c4",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_processbam"]
                     },
                     "varpipe/bwamem": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_processbam"]
                     },
                     "varpipe/coverageanalysis": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe/createannotations": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe/interpretation": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe/lineage": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe/parseannotations": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe/pdf": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe/report": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe/structuralvariants": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe/tar": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     }
                 }
@@ -86,22 +86,22 @@
                 "amd-ph-core": {
                     "fastq_clockwork_decontaminate": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["subworkflows"]
                     },
                     "varpipe_core": {
                         "branch": "main",
-                        "git_sha": "70096d062343863ddd937fc0ff62465031b22c48",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["subworkflows"]
                     },
                     "varpipe_processbam": {
                         "branch": "main",
-                        "git_sha": "e8c5f4ac9922f4830808c38f45dda4a76ad2b908",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     },
                     "varpipe_variantanalysis": {
                         "branch": "main",
-                        "git_sha": "1e8039aba3cf4e73b7f3e46ccb278dd383dc1d23",
+                        "git_sha": "7dcb738f3acf5decfa88e90c2ca13ed3b4659a4e",
                         "installed_by": ["varpipe_core"]
                     }
                 }

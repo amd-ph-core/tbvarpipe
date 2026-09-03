@@ -217,6 +217,6 @@ Org: NCEZID
 Contact Email: ncezid_shareit@cdc.gov
 Status: Maintained
 Keywords: bioinformatics
-Version: 1.2.1
+Version: 1.2.2
 Contract#: 47QFCA23F0058
 ```

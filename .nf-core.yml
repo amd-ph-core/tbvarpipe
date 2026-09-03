@@ -55,7 +55,9 @@ nf_core_version: 3.3.2
 repository_type: pipeline
 template:
   author: AMD Platform Team
-  description: AMD Platform repository for the Nextflow Pipeline of CDC Varpipe-WGS pipeline originally developed by the Division of TB Elimination to perform data cleaning and analysis (typing and variant detection)
+  description: AMD Platform repository for the Nextflow Pipeline of CDC
+    Varpipe-WGS pipeline originally developed by the Division of TB Elimination
+    to perform data cleaning and analysis (typing and variant detection)
   force: false
   is_nfcore: false
   name: tbvarpipe
@@ -63,4 +65,4 @@ template:
   outdir: .
   skip_features:
     - igenomes
-  version: 1.2.1
+  version: 1.2.2
